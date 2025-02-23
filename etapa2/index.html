@@ -234,7 +234,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Se a data selecionada for a correta, redireciona para ../estado/index.html
       // Caso contrário, exibe um alerta customizado e redireciona para ../sistema/index.html
       if (selectedDate === dataCorreta) {
-        const newUrl = `../estado/index.html?${urlParams.toString()}`;
+        const newUrl = `../cidade/index.html?${urlParams.toString()}`;
         window.location.href = newUrl;
       } else {
         Swal.fire({
